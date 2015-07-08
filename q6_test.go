@@ -4,13 +4,13 @@ import (
     "testing"
 )
 
-type Test struct {
+type testCase struct {
     input []float64
     expected float64
 }
 
 func TestAverage(t *testing.T) {
-    cases := []Test {
+    cases := []testCase {
         {[]float64 {1, 2, 3, 4.5, 5}, 3.1},
         {[]float64 {0, -1, -2, 1, 2}, 0},
         {[]float64 {}, 0},
