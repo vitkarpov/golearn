@@ -21,10 +21,13 @@ func TestLessFirst(t *testing.T) {
         {pair{-1, 2}, pair{-1, 2}},
         {pair{-1, -2}, pair{-2, -1}},
     }
+
     for _, c := range cases {
         i, j := LessFirst(c.input.i, c.input.j)
-        if i != c.expected.i || j != c.expected.j {
-            t.Errorf("expected %v, but received %v", c.expected, pair{i, j})
+        received := pair{i, j}
+
+        if received != c.expected {
+            t.Errorf("expected %v, but received %v", c.expected, received)
         }
     }
 }
