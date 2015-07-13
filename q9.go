@@ -12,13 +12,12 @@
 package golearn
 
 import (
-    "fmt"
     "strconv"
 )
 
 const size int = 10
 
-type stack struct {
+type Stack struct {
     i int
     // we could store only 10 elements max
     // it's a very poor stack
@@ -27,17 +26,17 @@ type stack struct {
 
 // it's very important to now working
 // with copies of stack each time
-func (s *stack) push(el int) {
+func (s *Stack) push(el int) {
     s.data[s.i] = el
     s.i++
 }
 
-func (s *stack) pop() int {
+func (s *Stack) pop() int {
     s.i--
     return s.data[s.i]
 }
 
-func (s stack) String() (str string) {
+func (s Stack) String() (str string) {
     for i := 0; i < s.i; i++ {
         str += "[" + strconv.Itoa(i) + ":" + strconv.Itoa(s.data[i]) + "]"
     }
